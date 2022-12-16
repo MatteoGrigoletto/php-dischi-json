@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
     <!-- cdn vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- cdn axios -->
@@ -13,12 +15,23 @@
 <body>
     
     <div id="app">
-        
-        <section>
-            <div>
-                <p v-for="album in albums">{{album.title}}</p>
+        <header>
+            <h2>Raccolta album</h2>
+        </header>
+        <main>
+            <div class="container">
+                <div v-for="album in albums" class="card">
+                    <div class="img-card">
+                        <img :src="album.poster" alt="">
+                    </div>
+                    <div class="text-card">
+                        <h2>{{album.title}}</h2>
+                        <small>{{album.author}}</small>
+                        <h3>{{album.year}}</h3>
+                    </div>
+                </div>
             </div>
-        </section>
+        </main>
 
       </div>
 
